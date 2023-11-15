@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">轻番茄</string>
+    <string name="app_name">CAN301</string>
     <!-- menu -->
     <string name="nav_setting">设置</string>
     <string name="nav_schedule">记录</string>
@@ -101,4 +101,17 @@
     <string name="toast_tick_sound_off">滴答声已关闭</string>
     <string name="navigation_drawer_open">打开导航栏</string>
     <string name="navigation_drawer_close">关闭导航栏</string>
+
+    <string name="collision">Collide with other event</string>
+    <string name="two_day">Event cannot last 2 days</string>
+    <string name="max_minutes">At most 120 minutes</string>
+    <string name="min_minutes">At least 15 minutes</string>
+    <string name="empty_consuming_time">Empty consuming time</string>
+    <string name="empty_event_name">Empty event name</string>
+    <string name="edit_quick_event">Edit</string>
+    <string name="delete">Delete</string>
+    <string name="delete_event">Delete event?</string>
+    <string name="cancel">Cancel</string>
+
+
 </resources>

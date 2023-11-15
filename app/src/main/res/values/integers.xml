@@ -9,4 +9,8 @@
     <integer name="pref_long_break_min">2</integer>
     <integer name="pref_long_break_frequency_max">6</integer>
     <integer name="pref_long_break_frequency_min">2</integer>
+
+    <integer name="max_minutes">120</integer>
+    <integer name="min_minutes">15</integer>
+
 </resources>
