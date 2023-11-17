@@ -12,5 +12,6 @@
 
     <integer name="max_minutes">120</integer>
     <integer name="min_minutes">15</integer>
+    <integer name="prepare_count">5</integer>
 
 </resources>

@@ -52,6 +52,14 @@
             android:label="@string/nav_info"
             android:screenOrientation="portrait">
         </activity>
+        <activity android:name=".activity.PrepareActivity"
+            android:screenOrientation="portrait"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.can301.coursework1.action.count.prepare"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
         <activity android:name=".activity.PlanActivity"
             android:screenOrientation="portrait"
             >

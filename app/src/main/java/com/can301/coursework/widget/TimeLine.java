@@ -70,6 +70,26 @@ public class TimeLine extends View {
 
 //    private float eventStrOffset;
 
+
+    private boolean colorOptionFlag = true;
+    private static final int COLOR_OPTION1 = Color.argb(220,146,129,122);
+    private static final int COLOR_OPTION2 = Color.argb(220,112,112,112);
+    private int chooseColor(){
+        if (colorOptionFlag) {
+            colorOptionFlag = false;
+            return COLOR_OPTION1;
+        }
+        else {
+            colorOptionFlag = true;
+            return COLOR_OPTION2;
+        }
+
+    }
+
+    public void setPaintBackGround(Paint paint){
+        paint.setColor(chooseColor());
+    }
+
     public TimeLine(Context context) {
         super(context);
     }
@@ -142,14 +162,14 @@ public class TimeLine extends View {
         }
         else if (motionEvent.getAction() == MotionEvent.ACTION_MOVE && state){
             long diff = System.currentTimeMillis() - lastDown;
-            if (diff >= 6*100l){
+            if (diff >= 5*100){
                 state = false;
                 longClick(motionEvent);
             }
         }
         else {
             long diff  = System.currentTimeMillis() - lastDown;
-            if (diff < 3*100){
+            if (diff < 2*100){
                 singleClick(motionEvent);
             }
         }
@@ -160,6 +180,13 @@ public class TimeLine extends View {
     private void singleClick(MotionEvent motionEvent){
         Event event = findEvent(motionEvent);
         if (event == null){return;}
+
+        // start event
+        Activity activity = ViewUtil.searchActivityFromView(this);
+        if (activity!=null){
+            PlanActivity planActivity = (PlanActivity)activity;
+            planActivity.startEvent(event);
+        }
 
     }
 
@@ -245,7 +272,7 @@ public class TimeLine extends View {
         Paint paint = new Paint();
         paint.setTextSize(calcTextSize());
         for(Event event:getEventList()){
-            paint.setColor(event.getStartHour()%2==0?Color.BLACK:Color.RED);
+            setPaintBackGround(paint);
             int left = getEventOffsetPixel();
             int top = calcEventTop(event);
             int right = calcEventWidth(event);

@@ -4,6 +4,7 @@ import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.JsonReader;
 import android.view.GestureDetector;
@@ -265,6 +266,14 @@ public class PlanActivity extends AppCompatActivity {
 //        AlertDialog alertDialog = builder.create();
 //        return alertDialog;
 //    }
+
+
+    public void startEvent(Event event){
+        Intent i = new Intent();
+        i.putExtra(PrepareActivity.countLengthKey,event.getLength());
+        i.setAction(getString(R.string.action_prepare_count));
+        startActivity(i);
+    }
 
     private void addQuickEvent(String name){
 

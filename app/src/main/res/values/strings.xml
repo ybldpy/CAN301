@@ -102,6 +102,8 @@
     <string name="navigation_drawer_open">打开导航栏</string>
     <string name="navigation_drawer_close">关闭导航栏</string>
 
+    <string name="action_prepare_count">com.can301.coursework1.action.count.prepare</string>
+
     <string name="collision">Collide with other event</string>
     <string name="two_day">Event cannot last 2 days</string>
     <string name="max_minutes">At most 120 minutes</string>
